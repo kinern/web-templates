@@ -1,0 +1,143 @@
+/*
+Penguin
+A cool white and blue theme, minimalistic
+*/
+
+/* Color Scheme */
+$color-bg : lightblue;
+$color-title-text : teal;
+$color-title-secondary : lightseagreen;
+$color-btn-text: white;
+$color-btn : lightseagreen;
+$color-btn-hover: darkcyan;
+
+$font-big: 64px;
+$font-reg: 14px;
+$font-small: 12px;
+
+
+body {
+    background-image: linear-gradient(to bottom left,  transparent 70%, $color-bg);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*Fonts*/
+h1, h5 {
+    color: $color-title-text;
+}
+h1 {
+    font-size: 64px;
+    margin-bottom:20px;
+}
+h4 {
+    color: $color-title-secondary;
+}
+
+.outer-box {
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom:50px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-box {
+    background: 
+    linear-gradient(to right, white 60%, transparent), 
+    url(/images/penguins.jpg);
+    background-position: bottom right;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    height: 80vh;
+    width: 80vw;
+}
+
+.top-nav {
+    text-align: right;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: $color-btn-text;
+    text-shadow: -1px 1px 0 rgba(0, 0, 0, 0.4),
+				  1px 1px 0 rgba(0, 0, 0, 0.4),
+				 1px -1px 0 rgba(0, 0, 0, 0.4),
+				-1px -1px 0 rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 30px;
+    transition: 0.4s;
+}
+.top-nav a:hover {
+    color:lightblue;
+}
+
+/* Button Styles */
+.button {
+    color:  $color-btn-text;
+    background-color: $color-btn;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: none;
+    transition: 0.4s;
+}
+.button:hover {
+    color: $color-btn-text;
+    background-color: $color-btn-hover;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+    text-shadow: none;
+}
+.top-nav .button, .content .button {
+    text-decoration: none;
+    text-shadow: none;
+    padding:5px;
+}
+.top-nav .button {
+    margin-left: -5px;
+}
+.top-nav .button:hover, .content .button:hover {
+    color: $color-btn-text;
+}
+
+/* Main Content Container */
+.main-box {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%
+}
+.right-content {
+    max-width: 300px;
+}
+.main-box .text {
+    font-size: 12px;
+    color:#707070;
+}
+
+/* Side Buttons */
+.carousel-buttons {
+    display: flex;
+    flex-direction: column;
+}
+.carousel-btn {
+    background-color: $color-btn-text;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    transition: 0.3s;
+}
+.carousel-btn:hover {
+    box-shadow: 0 0 3px white;
+}

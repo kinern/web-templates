@@ -1,0 +1,188 @@
+/*
+Flamingo Theme
+Very Pink, Very Summery
+*/
+
+
+/* Color Scheme */
+$color-bg-1 : rgba(240, 127, 127, 0.9);
+$color-bg-2 : rgba(255, 206, 153, 0.9);
+$color-header-filter : rgba(250, 110, 131, 0.8);
+$color-header-text : white;
+$color-title : teal;
+$color-footer-text: #518285;
+$color-img-bg-1 : #204c4f;
+$color-img-bg-2 : #545561;
+$color-shadow : rgba(0, 0, 0, 0.4);
+
+$text-size : 14px;
+
+@mixin remove-pm(){
+    margin:0;
+    padding:0;
+}
+@mixin flex-column(){
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-row(){
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: 
+    linear-gradient($color-bg-1, $color-bg-2), 
+    url(/images/leaves-upsp.jpg);
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.outer-main {
+    width: 100%;
+    @include flex-column();
+}
+
+
+/* Header Styles */
+.top-header {
+    background: 
+    linear-gradient(
+        $color-header-filter, 
+        $color-header-filter
+    ),
+    url(/images/flamingo-upsp.jpg);
+    background-size: cover;
+    margin: 20px 20px 0px 20px;
+    padding: 100px;
+    max-width: 800px;
+    border-radius: 20px 20px 0 0;
+    color: $color-header-text;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    box-shadow: 5px 5px 10px 5px $color-shadow;
+}
+
+.top-header hr {
+    height:1px;
+    border-width:0;
+    color: $color-header-text;
+    background-color: $color-header-text;
+    width: 100%;
+    margin:5px;
+    padding:0;
+}
+.inner-nav ul {
+    @include remove-pm();
+    text-align: center;
+}
+.inner-nav li {
+    margin: 0 20px 0 20px;
+    display: inline-block;
+}
+.inner-nav a {
+    font-size: $text-size;
+    font-weight: 700;
+    text-decoration: none;
+    color: $color-header-text;
+    transition: 0.3s;
+}
+.inner-nav a:hover {
+    text-shadow: 0 0 3px white;
+}
+
+/* Text Styles */
+h5 {
+    @include remove-pm();
+    color: $color-title;
+}
+#intro h5 {
+    text-align: center;
+    margin-bottom:35px;
+}
+.section-1 p {
+    margin-left:30px;
+}
+.section-3 p {
+    margin-right:30px;
+}
+p {
+    margin-top: 10px;
+    font-size: $text-size;
+}
+.section-2 .content-image h1 {
+    color: $color-header-text;
+    text-shadow: 0 0 5px $color-shadow;
+}
+.section-2 .content-text {
+    margin-top: 40px;
+}
+
+/* Main Content Container */
+.main {
+    padding: 40px;
+    margin: 0 20px 50px 20px;
+    background-color: white;
+    max-width: 800px;
+    @include flex-column();
+    justify-content: flex-start;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 5px 15px 10px 5px $color-shadow;
+}
+
+/* Intro Section */
+#intro {
+    margin-top: 50px;
+    border: solid 1px cornsilk;
+    border-radius: 5px;
+    padding:40px 20px 40px 20px;
+}
+
+.content-image {
+    background-color: $color-img-bg-1;
+    height: 200px;
+    min-width: 200px;
+    box-shadow: 0 5px 5px 0 $color-shadow;
+}
+.section-2 .content-image {
+    @include flex-row();
+    background-color: $color-img-bg-2;
+}
+.section-3 .content-image {
+    border-radius: 100px;
+}
+
+.section-1 .inner-content, .section-3 .inner-content {
+    display:flex;
+}
+.section-1 .inner-content{
+    text-align:right;
+}
+
+.section-1, .section-2, .section-3, footer {
+    margin-top:100px;
+}
+
+/* Footer Styles */
+footer {
+    @include flex-column();
+    width: 100%;
+}
+footer h6 {
+    color: $color-footer-text;
+    font-weight: 700;
+    @include remove-pm();
+}
+.social-links {
+    display:flex;
+    justify-content: space-around;
+}
+.social-links a{
+    margin: 5px;
+}

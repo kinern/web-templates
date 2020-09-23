@@ -1,0 +1,32 @@
+/*
+Irish Cob
+Also called Gypsy Vanner, a wintery nordic-esque theme with some browns and grays.
+*/
+
+body {
+    background-color: white;
+}
+
+.main {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-enav {
+    border: 1px solid red;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side-nav img {
+    background-color:lightgray;
+    background: url(/images/horse-snow.jpg);
+    width: 200px;
+    height: 500px;
+}
+
+.side-nav nav {
+    display:flex;
+}
