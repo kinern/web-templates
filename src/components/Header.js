@@ -11,10 +11,11 @@ const drawerStyles = {
 };
 
 const listItemStyles = {
-    color: '#333',
+    color: '#555',
     '& a': {
         textDecoration: 'none',
-        color: '#333',
+        color: '#555',
+        width: '100%',
     }
 };
 
@@ -38,8 +39,8 @@ const Header = ({}) => {
 
     const Drawers = () => 
     <Box sx={drawerStyles}>
-        <Typography variant={'h4'}>Themes!</Typography>
-        <Divider />
+        <Typography sx={{textTransform: 'uppercase', color: '#555'}} variant={'h5'}>Themes</Typography>
+        <Divider sx={{margin: '10px 0px 10px 0px'}}/>
         <List>
             {links.map((item)=>{
                 return (

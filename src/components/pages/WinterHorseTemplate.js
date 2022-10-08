@@ -1,44 +1,64 @@
 import React, {useEffect} from 'react';
 import Header from '../Header';
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, List, ListItem, ListItemButton, Typography } from '@mui/material';
 
 // import '../../styles/theme3-winter-horse.scss';
 
 const horseImg = require('../../assets/horse-snow.jpg');
 
 const outerStyles = {
-    backgroundColor: '#bbecfa',
-    height: '100%',
-    margin:0
+    margin:0,
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed'
 };
 
 const mainStyles = {
     backgroundColor: '#FFF',
-    marginTop: '80px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    width: '90%',
+    maxHeight: '100vh',
+    margin: '80px auto 80px auto',
     boxShadow: '0px 10px 10px 0px #111',
 };
 
 const sideNavStyles = {
-    backgroundColor: 'pink',
     display:'flex',
     flexDirection: 'column',
     alignItems: 'center',
     '& img': {
         backgroundColor:'lightgray',
-        background: `url(${horseImg})`,
+        backgroundImage: `url(${horseImg})`,
         backgroundSize: 'contain',
-        width: '200px',
-        height: 'auto'
+        width: '100%',
+        height: 'auto',
+        overflow:'hidden',
     },
     '& nav': {
-        display:'flex'
+        width:'100%',
+        display:'flex',
+        '& ul': {
+            width: '100%',
+        },
+        '& a': {
+            textDecoration: 'none',
+            color: '#333'
+        }
     }
 };
 
 const contentStyles = {
+    padding:'10px 20px 10px 20px',
+    '& p, h5, h6': {
+        color: '#555',
+        margin: '0 0 8px 0',
+    },
+    '& section': {
+        margin: '0px 0px 36px 0px'
+    }
 
+};
+
+const navButtonStyles = {
+    justifyContent: 'center'
 };
 
 
@@ -51,35 +71,35 @@ const IrishCobTemplate = () => {
     return (
         <Container sx={outerStyles} maxWidth={false} disableGutters>
             <Header />
-            <Grid Container direciton="row" sx={mainStyles} spacing={2}>
-                <Grid item xs={1} sm={1} sx={sideNavStyles} className="side-nav">
-                    <img alt="Irish Cob Horse" src={horseImg}/>
+            <Grid container direciton="row" sx={mainStyles} spacing={0}>
+                <Grid item xs={12} sm={3} sx={sideNavStyles} className="side-nav">
                     <nav>
-                        <ul>
-                            <li>Home</li>
-                            <li>Section1</li>
-                            <li>Section2</li>
-                        </ul>
+                        <List spacing={0}>
+                            <ListItem><ListItemButton sx={navButtonStyles}><Typography variant={'body1'}><a href="#home">Home</a></Typography></ListItemButton></ListItem>
+                            <ListItem><ListItemButton sx={navButtonStyles}><Typography variant={'body1'}><a href="#about">About</a></Typography></ListItemButton></ListItem>
+                            <ListItem><ListItemButton sx={navButtonStyles}><Typography variant={'body1'}><a href="#links">Links</a></Typography></ListItemButton></ListItem>
+                        </List>
                     </nav>
+                    <img alt="Irish Cob Horse" src={horseImg}/>
                 </Grid>
-                <Grid item xs={1} sm={1} sx={contentStyles} className="content">
+                <Grid item xs={12} sm={9} sx={contentStyles} className="content">
                     <section className="section-1">
-                        <h5>Introduction Blurb</h5>
-                        <p>
+                        <Typography sx={{textTransform:'uppercase'}} variant={'h5'}>Introduction</Typography>
+                        <Typography variant={'body1'}>
                             This is the introductory paragraph for this webpage.
                             The theme Flamingo is suppsoed to be very pink and very bright.
                             There is an 80s feel to the site given the color scheme.
                             The flamingo photograph on top should draw in the user.    
-                        </p>
+                        </Typography>
                     </section>
                     <section className="section-2">
-                        <h5>Introduction Blurb</h5>
-                        <p>
+                        <Typography sx={{textTransform:'uppercase'}} variant={'h6'}>Secondary Text</Typography>
+                        <Typography variant={'body1'}>
                             This is the introductory paragraph for this webpage.
                             The theme Flamingo is suppsoed to be very pink and very bright.
                             There is an 80s feel to the site given the color scheme.
                             The flamingo photograph on top should draw in the user.    
-                        </p>
+                        </Typography>
                     </section>
                 </Grid>
             </Grid>

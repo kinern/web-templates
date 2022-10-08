@@ -27,7 +27,7 @@ const outerBoxStyles = {
 
 const innerBoxStyles = {
     maxWidth: '800px',
-    marginTop: '80px',
+    marginTop: '50px',
 };
 
 const innerNavStyles = {

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import Header from '../Header';
-import { Box, Container } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 //import '../../styles/theme2-penguin.scss';
 
@@ -8,15 +8,14 @@ const bgImg = require('../../assets/penguins.jpg');
 
 const backgroundStyle = {
     backgroundImage: 'linear-gradient(to bottom left,  transparent 70%, lightseagreen)',
-    height: '100%',
+    height: 'auto',
     margin: '0',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed'
 }
 
 const outerBoxStyles = {
-    height: '100%',
-    paddingTop: '50px',
+    paddingTop: '80px',
     paddingBottom:'50px',
     width: '100%',
     display:'flex',
@@ -38,7 +37,10 @@ const innerBoxStyles = {
 }
 
 const topNavStyles = {
-    textAlign: 'right',
+    display:'flex',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent:'flex-end',
     '& a': {
         textDecoration: 'none',
         color: '#FFF',
@@ -121,26 +123,26 @@ const PenguinTemplate = () => {
                 <Box sx={innerBoxStyles} className="inner-box">
 
                     <Box sx={topNavStyles} className="top-nav">
-                        <a href="#intro">Home</a>
-                        <a href="#first">About</a>
-                        <a href="#second">Info</a>
-                        <a className="button" href="#intro">Contact</a>
+                        <Typography variant={'body1'}><a href="#intro">Home</a></Typography>
+                        <Typography variant={'body1'}><a href="#first">About</a></Typography>
+                        <Typography variant={'body1'}><a href="#second">Info</a></Typography>
+                        <Typography variant={'body1'}><a className="button" href="#intro">Contact</a></Typography>
                     </Box>
 
                     <Box sx={mainBoxStyles} className="main-box">
                         <Box sx={{maxWidth: '300px'}} className="right-content">
                             <Box className="slide-1">
                                 <header className="title">
-                                    <h1>Penguins</h1>
-                                    <h4>A cool, minimalistic theme</h4>
+                                    <Typography variant={'h1'}>Penguins</Typography>
+                                    <Typography variant={'h4'}>A cool, minimalistic theme</Typography>
                                 </header>
-                                <div className="content">
+                                <Box className="content">
                                     <div className="image"></div>
                                     <div className="text">
-                                        <p>Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris. Praesent diam risus, pretium et purus a, convallis faucibus purus.</p>
-                                        <a className="button" href="#intro">Learn More</a>
+                                        <Typography variant={'body1'}>Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris. Praesent diam risus, pretium et purus a, convallis faucibus purus.</Typography>
+                                        <Typography variant={'body1'}><a className="button" href="#intro">Learn More</a></Typography>
                                     </div>
-                                </div>
+                                </Box>
                             </Box>
                         </Box>
                         <Box sx ={carouselButtonStyles} className="carousel-buttons">
