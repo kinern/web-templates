@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Header from '../Header';
 import { Box, Container } from '@mui/material';
 
@@ -109,6 +109,11 @@ const carouselButtonStyles = {
 }
 
 const PenguinTemplate = () => {
+
+    useEffect(()=>{
+        document.title = "Gallery | Penguins";
+    },[]);
+
     return (
         <Container sx={backgroundStyle} maxWidth={false} disableGutters>
             <Header />

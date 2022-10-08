@@ -1,16 +1,59 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Header from '../Header';
-import { Box, Container } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 // import '../../styles/theme3-winter-horse.scss';
 
+const horseImg = require('../../assets/horse-snow.jpg');
+
+const outerStyles = {
+    backgroundColor: '#bbecfa',
+    height: '100%',
+    margin:0
+};
+
+const mainStyles = {
+    backgroundColor: '#FFF',
+    marginTop: '80px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    boxShadow: '0px 10px 10px 0px #111',
+};
+
+const sideNavStyles = {
+    backgroundColor: 'pink',
+    display:'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    '& img': {
+        backgroundColor:'lightgray',
+        background: `url(${horseImg})`,
+        backgroundSize: 'contain',
+        width: '200px',
+        height: 'auto'
+    },
+    '& nav': {
+        display:'flex'
+    }
+};
+
+const contentStyles = {
+
+};
+
+
 const IrishCobTemplate = () => {
+
+    useEffect(()=>{
+        document.title = "Gallery | Winter Horse";
+    },[]);
+
     return (
-        <Container maxWidth={false} disableGutters>
+        <Container sx={outerStyles} maxWidth={false} disableGutters>
             <Header />
-            <div className="main">
-                <div className="side-nav">
-                    <img alt="Irish Cob Horse" src=""/>
+            <Grid Container direciton="row" sx={mainStyles} spacing={2}>
+                <Grid item xs={1} sm={1} sx={sideNavStyles} className="side-nav">
+                    <img alt="Irish Cob Horse" src={horseImg}/>
                     <nav>
                         <ul>
                             <li>Home</li>
@@ -18,9 +61,9 @@ const IrishCobTemplate = () => {
                             <li>Section2</li>
                         </ul>
                     </nav>
-                </div>
-                <div className="content">
-                    <section>
+                </Grid>
+                <Grid item xs={1} sm={1} sx={contentStyles} className="content">
+                    <section className="section-1">
                         <h5>Introduction Blurb</h5>
                         <p>
                             This is the introductory paragraph for this webpage.
@@ -29,7 +72,7 @@ const IrishCobTemplate = () => {
                             The flamingo photograph on top should draw in the user.    
                         </p>
                     </section>
-                    <section>
+                    <section className="section-2">
                         <h5>Introduction Blurb</h5>
                         <p>
                             This is the introductory paragraph for this webpage.
@@ -38,8 +81,8 @@ const IrishCobTemplate = () => {
                             The flamingo photograph on top should draw in the user.    
                         </p>
                     </section>
-                </div>
-            </div>
+                </Grid>
+            </Grid>
         </Container>
     );
 }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Icon from '@mdi/react'
 import { mdiGithub, mdiLinkedin, mdiInstagram, mdiBasketball } from '@mdi/js';
 import Header from '../Header';
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Divider, Grid, Typography } from '@mui/material';
 
 //import '../../styles/theme1-flamingo.scss';
 const bgImg = require('../../assets/leaves-upsp.jpg');
@@ -11,7 +11,7 @@ const headerImg = require('../../assets/flamingo-upsp.jpg');
 const backgroundStyle = {
     background: `linear-gradient(rgba(240, 127, 127, 0.9), rgba(255, 206, 153, 0.9)), url(${bgImg})`,
     backgroundSize: 'cover',
-    height: '100%',
+    height: 'auto',
     margin: '0',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed'
@@ -26,7 +26,8 @@ const outerBoxStyles = {
 };
 
 const innerBoxStyles = {
-    maxWidth: '800px'
+    maxWidth: '800px',
+    marginTop: '80px',
 };
 
 const innerNavStyles = {
@@ -39,7 +40,7 @@ const innerNavStyles = {
     borderRadius: '20px 20px 0 0',
     color: '#FFF',
     textShadow: '0 0 5px rgba(0, 0, 0, 1)',
-    boxShadow: '5px 5px 10px 5px rgba(0, 0, 0, 0.4)',
+    boxShadow: '0px 10px 10px 0px rgba(0, 0, 0, 0.4)',
     '& ul' : {
         textAlign : 'center',
         margin:'0px',
@@ -71,7 +72,7 @@ const mainStyles = {
     alignItems: 'center',
     justifyContent: 'flex-start',
     borderRadius: '0 0 20px 20px',
-    boxShadow: '5px 15px 10px 5px rgba(0, 0, 0, 0.4)'
+    boxShadow: '0px 10px 10px 0px rgba(0, 0, 0, 0.4)'
 };
 
 const introStyles = {
@@ -85,13 +86,14 @@ const introStyles = {
         textAlign: 'center',
         marginBottom:'35px'
     },
-    boxShadow: '0px 5px 5px 0px rgba(0, 0, 0, 0.2)'
+    //boxShadow: '0px 5px 5px 0px rgba(0, 0, 0, 0.2)'
 };
 
 const sectionStyles = {
     padding: '100px 0px 100px 0px',
     '& p': {
-        marginLeft: '30px'
+        marginRight: '30px',
+        color: '#555'
     },
     '& .inner-content, .section-3 .inner-content': {
         display: 'flex'
@@ -108,6 +110,9 @@ const secondSectionStyles = {
     '& .content-image h1': {
         color: '#FFF',
         textShadow: '0 0 5px rgba(0, 0, 0, 0.4)',
+    },
+    '& p': {
+        color: '#555'
     },
     '& .content-text': {
         margin: '50px 0px 100px 0px'
@@ -128,8 +133,9 @@ const thirdSectionStyles = {
     '& .content-image': {
         borderRadius: '100px'
     },
-    '& p':{
-        marginRight: '30px'
+    '& p': {
+        marginRight: '30px',
+        color: '#555'
     },
     '& .inner-content': {
         display:'flex'
@@ -143,7 +149,7 @@ const footerStyles = {
     alignItems: 'center',
     width: '100%',
     margin: '100px 0 50px 0',
-    '& h6': {
+    '& p': {
         color: '#518285',
         fontWeight: '700',
         margin: 0,
@@ -162,6 +168,11 @@ const footerStyles = {
 
 
 const FlamingoTemplate = () => {
+
+    useEffect(()=>{
+        document.title = "Gallery | Flamingo";
+    },[]);
+
     return (
         <Container sx={backgroundStyle} maxWidth={false} disableGutters>
             <Header />
@@ -169,14 +180,14 @@ const FlamingoTemplate = () => {
                 <Box sx={innerBoxStyles} className="inner-main">
 
                     <Box sx={innerNavStyles}>
-                            <h2>Flamingo Pink</h2>
-                            <hr />
+                            <Typography variant={'h2'}>Flamingo Pink</Typography>
+                            <Divider sx={{margin: '20px 0 20px 0'}}/>
                             <Box >
                                 <ul>
-                                    <li><a href="#intro">Intro</a></li>
-                                    <li><a href="#section1">First</a></li>
-                                    <li><a href="#section2">Second</a></li>
-                                    <li><a href="#section3">Third</a></li>
+                                    <li><Typography variant={'body1'}><a href="#intro">Intro</a></Typography></li>
+                                    <li><Typography variant={'body1'}><a href="#section1">First</a></Typography></li>
+                                    <li><Typography variant={'body1'}><a href="#section2">Second</a></Typography></li>
+                                    <li><Typography variant={'body1'}><a href="#section3">Third</a></Typography></li>
                                 </ul>
                             </Box>
                     </Box>
@@ -184,26 +195,27 @@ const FlamingoTemplate = () => {
                     <Box sx={mainStyles}>
 
                         <Box sx={introStyles} id="intro" className="intro">
-                            <h5>Introduction</h5>
-                            <p>
+                            <Typography variant={'h5'}>Introduction</Typography>
+                            <Typography variant={'body1'}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Curabitur viverra efficitur quam, a aliquam purus tempus vitae. 
                             Aliquam mollis urna ligula, sit amet molestie elit malesuada eget. 
                             Nulla a ipsum eget nisi condimentum ultrices a nec leo. 
                             Quisque id tempor leo, quis varius enim. 
                             Nulla dictum sed nunc vel fringilla.  
-                            </p>
+                            </Typography>
                         </Box>
 
                         <Box sx={sectionStyles} id="section1" className="section-1">
                             <article className="inner-content">
                                 <div className="content-image"></div>
                                 <div>
-                                    <h5>First Section</h5>
-                                    <p>Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris.
+                                    <Typography variant={'h5'}>First Section</Typography>
+                                    <Typography variant={'body1'}>
+                                        Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris.
                                     Nulla a ipsum eget nisi condimentum ultrices a nec leo. 
                                         <i> Praesent diam risus, pretium et purus a, convallis faucibus purus.</i>
-                                    </p>
+                                    </Typography>
                                 </div>
                             </article>
                         </Box>
@@ -211,29 +223,29 @@ const FlamingoTemplate = () => {
                         <Box sx={secondSectionStyles} id="section2" className="section-2">
                             <article className="inner-content">
                                 <div className="content-image">
-                                    <h1>Lorem Ipsum</h1>
+                                    <Typography variant={'h1'}>Lorem Ipsum</Typography>
                                 </div>
                                 <div className="content-text">
-                                    <p><strong>
+                                    <Typography variant={'body1'}><strong>
                                         Phasellus id malesuada elit. Praesent mollis sem augue. Mauris tempor ornare nisl, non tincidunt risus pretium nec. 
                                         Aenean auctor, arcu euismod fringilla porta, nisl felis dictum diam, at egestas augue magna ac odio.
-                                    </strong></p>
+                                    </strong></Typography>
                                     <br />
                                     <Grid container spacing={3}>
                                         <Grid item sm={6}>
-                                            <p>
+                                            <Typography variant={'body1'}>
                                                 Praesent diam risus, pretium et purus a, convallis faucibus purus.
                                                 Vestibulum eget tristique felis. Donec rhoncus orci vitae ultrices gravida. 
                                                 Morbi non eleifend dui, eget consequat ligula. Integer semper justo sed tortor molestie consequat ut et dui. 
                                                 Nulla et dictum sapien.
-                                            </p>
+                                            </Typography>
                                         </Grid>
                                         <Grid item sm={6}>
-                                            <p>
+                                            <Typography variant={'body1'}>
                                                 Donec rhoncus orci vitae ultrices gravida. 
                                                 Morbi non eleifend dui, eget consequat ligula. Integer semper justo sed tortor molestie consequat ut et dui. 
                                                 Nulla et dictum sapien.
-                                            </p>
+                                            </Typography>
                                         </Grid>
                                     </Grid>
 
@@ -244,21 +256,21 @@ const FlamingoTemplate = () => {
                         <Box sx={thirdSectionStyles} id="section3" className="section-3">
                             <article className="inner-content">
                                 <div>
-                                    <h5>Third Section</h5>
-                                    <p>
+                                    <Typography variant={'h5'}>Third Section</Typography>
+                                    <Typography variant={'body1'}>
                                     <strong>Donec dapibus vehicula interdum. </strong> 
                                     Proin finibus mi quis dui semper consectetur. 
                                     Aenean imperdiet dui elit, eget facilisis leo dictum et. 
                                     Vestibulum consectetur turpis sapien, quis pretium est tincidunt porta. 
                                     Mauris facilisis euismod massa, at aliquet enim. 
-                                    </p>
+                                    </Typography>
                                 </div>
                                 <div className="content-image"></div>
                             </article>
                         </Box>
 
                         <Box sx={footerStyles}>
-                            <h6>Flamingo Template by Natalie Kiner</h6>
+                            <Typography variant={'body2'}>Flamingo Template by Natalie Kiner</Typography>
                             <div className="social-links">
                             <a href="https://github.com">
                                 <Icon path={mdiGithub}
