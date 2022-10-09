@@ -9,7 +9,7 @@ const bgImg = require('../../assets/leaves-upsp.jpg');
 const headerImg = require('../../assets/flamingo-upsp.jpg');
 
 const backgroundStyle = {
-    background: `linear-gradient(rgba(240, 127, 127, 0.9), rgba(255, 206, 153, 0.9)), url(${bgImg})`,
+    background: `linear-gradient(rgba(31, 143, 121, 0.9), rgba(255, 206, 153, 0.9)), url(${bgImg})`,
     backgroundSize: 'cover',
     height: 'auto',
     margin: '0',
@@ -107,7 +107,7 @@ const sectionStyles = {
 }
 
 const secondSectionStyles = {
-    '& .content-image h1': {
+    '& .content-image h3': {
         color: '#FFF',
         textShadow: '0 0 5px rgba(0, 0, 0, 0.4)',
     },
@@ -119,10 +119,10 @@ const secondSectionStyles = {
     },
     '& .content-image': {
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#545561',
+        backgroundColor: 'rgba(31, 143, 121)',
         margin: '0px -40px 0px -40px',
         padding: '120px 0 40px 0'
 
@@ -223,7 +223,8 @@ const FlamingoTemplate = () => {
                         <Box sx={secondSectionStyles} id="section2" className="section-2">
                             <article className="inner-content">
                                 <div className="content-image">
-                                    <Typography variant={'h1'}>Lorem Ipsum</Typography>
+                                    <Typography variant={'h3'}>Lorem Ipsum</Typography>
+                                    <Divider sx={{borderColor: 'rgba(255,255,255,0.5)', width: '90%', margin: '16px 0 16px 0'}}/>
                                 </div>
                                 <div className="content-text">
                                     <Typography variant={'body1'}><strong>
