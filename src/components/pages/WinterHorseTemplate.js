@@ -1,110 +1,127 @@
 import React, {useEffect} from 'react';
 import Header from '../Header';
-import { Box, Container, Grid, List, ListItem, ListItemButton, Typography } from '@mui/material';
+import { Box, Container, Divider, Grid, Typography } from '@mui/material';
 
 // import '../../styles/theme3-winter-horse.scss';
 
-const horseImg = require('../../assets/horse-snow.jpg');
-
-const outerStyles = {
-    margin:0,
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed'
+const images = {
+    'horse': require('../../assets/horse-template/horse.jpg'),
+    'ornaments': require('../../assets/horse-template/ornaments.jpg'),
+    'town': require('../../assets/horse-template/town.jpg'),
+    'hills': require('../../assets/horse-template/hills.jpg')
 };
 
-const mainStyles = {
-    backgroundColor: '#FFF',
-    width: '90%',
-    maxHeight: '100vh',
-    margin: '80px auto 80px auto',
-    boxShadow: '0px 10px 10px 0px #111',
-};
-
-const sideNavStyles = {
-    display:'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    '& img': {
-        backgroundColor:'lightgray',
-        backgroundImage: `url(${horseImg})`,
-        backgroundSize: 'contain',
-        width: '100%',
-        height: 'auto',
-        overflow:'hidden',
-    },
-    '& nav': {
-        width:'100%',
-        display:'flex',
-        '& ul': {
-            width: '100%',
+const tileStyle = (bgImage) => {
+    return {
+        justifyContent:'center',
+        backgroundImage: `url(${bgImage})`,
+        backgroundColor: 'rgba(0,0,0, 1)',
+        //opacity: '0.4',
+        position: 'relative',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        color: '#FFF',
+        textShadow: '1px 1px 2px black',
+        transition: '0.5s all',
+        '&:hover' : {
+            //opacity: '0.8',
         },
-        '& a': {
-            textDecoration: 'none',
-            color: '#333'
-        }
+        height: {xs: '100vh', sm: '100vh', md: 'auto'}
     }
 };
 
-const contentStyles = {
-    padding:'10px 20px 10px 20px',
-    '& p, h5, h6': {
-        color: '#555',
-        margin: '0 0 8px 0',
-    },
-    '& section': {
-        margin: '0px 0px 36px 0px'
+const colorTileStyle = {
+    position: 'relative', 
+    zIndex: 1, 
+    height: '100%', 
+    width: '100%', 
+    backgroundColor: '#171e2e', 
+    opacity: '0.5',
+    transition: '0.5s all',
+    '&:hover': {
+        opacity: '0.1'
     }
-
 };
 
-const navButtonStyles = {
-    justifyContent: 'center'
-};
+const titleTextStyles = {
+    pointerEvents: 'none',
+    position: 'absolute', 
+    margin: 'auto', 
+    top: '0', 
+    bottom: '0', 
+    left: '0', 
+    right: '0', 
+    zIndex: 2, 
+    display:'flex', 
+    flexDirection: 'column', 
+    justifyContent: 'center', 
+    alignItems:'center'
+}
 
 
-const IrishCobTemplate = () => {
+const WinterHorseTemplate = () => {
 
     useEffect(()=>{
         document.title = "Gallery | Winter Horse";
     },[]);
 
     return (
-        <Container sx={outerStyles} maxWidth={false} disableGutters>
-            <Header />
-            <Grid container direciton="row" sx={mainStyles} spacing={0}>
-                <Grid item xs={12} sm={3} sx={sideNavStyles} className="side-nav">
-                    <nav>
-                        <List spacing={0}>
-                            <ListItem><ListItemButton sx={navButtonStyles}><Typography variant={'body1'}><a href="#home">Home</a></Typography></ListItemButton></ListItem>
-                            <ListItem><ListItemButton sx={navButtonStyles}><Typography variant={'body1'}><a href="#about">About</a></Typography></ListItemButton></ListItem>
-                            <ListItem><ListItemButton sx={navButtonStyles}><Typography variant={'body1'}><a href="#links">Links</a></Typography></ListItemButton></ListItem>
-                        </List>
-                    </nav>
-                    <img alt="Irish Cob Horse" src={horseImg}/>
+        <Container maxWidth={false} disableGutters>
+            <Header menuIconColor={'#FFF'}/>
+            <Grid sx={{height:'100vh', backgroundColor: '#000'}} container direciton="row" spacing={0}>
+                <Grid item xs={12} sm={12} md={6} className="content" sx={tileStyle(images['horse'])}>
+                    <Box sx={colorTileStyle}/>
+                    <Box sx={titleTextStyles}>
+                        <Typography variant={'h4'} sx={{textTransform:'uppercase'}}>
+                            Winter Horse
+                        </Typography>
+                        <Divider sx={{borderColor: '#FFF', width:'70%', margin: '8px 0px 8px 0px'}}/>
+                        <Typography variant={'body1'}>
+                            Lorem ipsum dolor sit amet
+                        </Typography>
+                    </Box>
                 </Grid>
-                <Grid item xs={12} sm={9} sx={contentStyles} className="content">
-                    <section className="section-1">
-                        <Typography sx={{textTransform:'uppercase'}} variant={'h5'}>Introduction</Typography>
-                        <Typography variant={'body1'}>
-                            This is the introductory paragraph for this webpage.
-                            The theme Flamingo is suppsoed to be very pink and very bright.
-                            There is an 80s feel to the site given the color scheme.
-                            The flamingo photograph on top should draw in the user.    
-                        </Typography>
-                    </section>
-                    <section className="section-2">
-                        <Typography sx={{textTransform:'uppercase'}} variant={'h6'}>Secondary Text</Typography>
-                        <Typography variant={'body1'}>
-                            This is the introductory paragraph for this webpage.
-                            The theme Flamingo is suppsoed to be very pink and very bright.
-                            There is an 80s feel to the site given the color scheme.
-                            The flamingo photograph on top should draw in the user.    
-                        </Typography>
-                    </section>
+                <Grid item container xs={12} sm={12} md={6} className="content">
+                    <Grid item container xs={12} sm={12} className="content" sx={tileStyle(images['hills'])}>
+                        <Box sx={colorTileStyle}/>
+                        <Box sx={titleTextStyles}>
+                            <Typography variant={'h5'} sx={{textTransform:'uppercase'}}>
+                                Lorem ipsum
+                            </Typography>
+                            <Divider sx={{borderColor: '#FFF', width:'50%', margin: '8px 0px 8px 0px'}}/>
+                            <Typography variant={'body1'}>
+                                consectetur adipiscing elit
+                            </Typography>
+                        </Box>
+                    </Grid>
+                    <Grid item container xs={12} sm={12} className="content" sx={tileStyle(images['town'])}>
+                        <Box sx={colorTileStyle}/>
+                        <Box sx={titleTextStyles}>
+                            <Typography variant={'h5'} sx={{textTransform:'uppercase'}}>
+                                Lorem ipsum
+                            </Typography>
+                            <Divider sx={{borderColor: '#FFF', width:'50%', margin: '8px 0px 8px 0px'}}/>
+                            <Typography variant={'body1'}>
+                                Curabitur ultrices urna sit amet
+                            </Typography>
+                        </Box>
+                    </Grid>
+                    <Grid item container xs={12} sm={12} className="content" sx={tileStyle(images['ornaments'])}>
+                        <Box sx={colorTileStyle}/>
+                        <Box sx={titleTextStyles}>
+                            <Typography variant={'h5'} sx={{textTransform:'uppercase'}}>
+                                Lorem ipsum
+                            </Typography>
+                            <Divider sx={{borderColor: '#FFF', width:'50%', margin: '8px 0px 8px 0px'}}/>
+                            <Typography variant={'body1'}>
+                                egestas dignissim
+                            </Typography>
+                        </Box>
+                    </Grid>
                 </Grid>
             </Grid>
         </Container>
     );
 }
 
-export default IrishCobTemplate;
+export default WinterHorseTemplate;
