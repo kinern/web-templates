@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter as Router} from 'react-router-dom';
 import PenguinThemePage from '../components/pages/PenguinTemplate';
 import FlamingoThemePage from '../components/pages/FlamingoTemplate';
 import HorseThemePage from '../components/pages/WinterHorseTemplate';
+import WagashiTemplate from '../components/pages/WagashiTemplate';
 
 const SiteRouter = () => {
     return(
@@ -12,6 +13,7 @@ const SiteRouter = () => {
                 <Route path="/penguin-theme" element={<PenguinThemePage />} />
                 <Route path="/flamingo-theme" element={<FlamingoThemePage />} />
                 <Route path="/horse-theme" element={<HorseThemePage />} />
+                <Route path="/wagashi-theme" element={<WagashiTemplate />} />
             </Routes>
         </Router>
     );

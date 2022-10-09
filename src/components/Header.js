@@ -34,7 +34,8 @@ const Header = ({}) => {
     const links = [
         {name: 'Flamingo', url: '/flamingo-theme'},
         {name: 'Penguin', url: '/penguin-theme'},
-        {name: 'Winter Horse', url: '/horse-theme'}
+        {name: 'Wagashi', url: '/wagashi-theme'},
+        {name: 'Winter Horse', url: '/horse-theme'},
     ];
 
     const Drawers = () => 
@@ -58,9 +59,9 @@ const Header = ({}) => {
 
 
     return (
-        <AppBar color="transparent" elevation={0} component="nav">
+        <AppBar sx={{pointerEvents:'none'}} color="transparent" elevation={0} component="nav">
             <Toolbar >
-                <IconButton onClick={handleDrawerToggle} edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                <IconButton onClick={handleDrawerToggle} edge="start" color="inherit" aria-label="menu" sx={{ pointerEvents:'auto', mr: 2 }}>
                     <MenuIcon />
                 </IconButton>
             </Toolbar>

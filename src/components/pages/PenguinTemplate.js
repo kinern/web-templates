@@ -2,22 +2,21 @@ import React, {useEffect} from 'react';
 import Header from '../Header';
 import { Box, Container, Typography } from '@mui/material';
 
-//import '../../styles/theme2-penguin.scss';
-
 const bgImg = require('../../assets/penguins.jpg');
 
 const backgroundStyle = {
     backgroundImage: 'linear-gradient(to bottom left,  transparent 70%, lightseagreen)',
-    height: 'auto',
     margin: '0',
     backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed'
+    backgroundAttachment: 'fixed',
+    height: '100%',
 }
 
 const outerBoxStyles = {
-    paddingTop: '80px',
-    paddingBottom:'50px',
+    paddingTop: {xs:'0px', sm:'30px'},
+    paddingBottom: {xs:'0px', sm:'50px'},
     width: '100%',
+    height: {xs: '100%', sm: 'auto'},
     display:'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -31,9 +30,10 @@ const innerBoxStyles = {
     backgroundSize: 'auto 100%',
     backgroundRepeat: 'no-repeat',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.4)',
-    padding: '20px',
-    height: '80vh',
-    width: '80vw'
+    padding: {xs:'20px 0 20px 0', sm:'20px'},
+    height: {xs:'100vh', sm:'80vh'},
+    width: {xs:'100%', sm:'80%'},
+    margin: 'auto'
 }
 
 const topNavStyles = {
@@ -43,28 +43,25 @@ const topNavStyles = {
     justifyContent:'flex-end',
     '& a': {
         textDecoration: 'none',
-        color: '#FFF',
-        textShadow: `-1px 1px 0 rgba(0, 0, 0, 0.4),
-                      1px 1px 0 rgba(0, 0, 0, 0.4),
-                     1px -1px 0 rgba(0, 0, 0, 0.4),
-                    -1px -1px 0 rgba(0, 0, 0, 0.4)`,
+        color: '#222',
         fontSize: '14px',
         fontWeight: '700',
         marginRight: '30px',
         transition: '0.4s',
         '&:hover': {
-            color:'lightblue'
+            color:'#000'
         }
     },
     '& .button': {
+        color: '#FFF',
         marginLeft: '-5px',
-        backgroundColor: 'lightseagreen',
+        backgroundColor: 'darkcyan',
         textDecoration: 'none',
         textShadow: 'none',
-        padding: '5px',
+        padding: '8px 16px',
         '&:hover': {
             color: '#FFF',
-            backgroundColor: 'darkcyan',
+            backgroundColor: 'lightseagreen',
         }
     }
 };
@@ -74,16 +71,29 @@ const mainBoxStyles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: '100%',
-    width: '100%',
-    '& .text': {
+    height: {xs:'auto', sm:'100%'},
+    width: {xs:'auto', sm:'100%'},
+    padding: {xs: '54px 16px 0px 16px', sm: '0px'},
+    '& h3': {
+        color: '#555',
+        margin: '16px 0'
+    }, 
+    '& h5': {
+        color: '#333',
+        fontWeight: 'bold',
+        margin: '16px 0'
+    },
+    '& .text p': {
         fontSize: '12px',
-        color:'#707070',
+        color:'#555',
+        margin : '16px 0'
     },
     '& .content .button': {
         textDecoration: 'none',
         textShadow: 'none',
-        padding:'5px',
+        padding:'8px 16px',
+        borderRadius:'36px',
+        fontWeight: 'bold',
         color: '#FFF',
         backgroundColor: 'darkcyan',
         transition: '0.4s',
@@ -123,24 +133,24 @@ const PenguinTemplate = () => {
                 <Box sx={innerBoxStyles} className="inner-box">
 
                     <Box sx={topNavStyles} className="top-nav">
-                        <Typography variant={'body1'}><a href="#intro">Home</a></Typography>
-                        <Typography variant={'body1'}><a href="#first">About</a></Typography>
-                        <Typography variant={'body1'}><a href="#second">Info</a></Typography>
-                        <Typography variant={'body1'}><a className="button" href="#intro">Contact</a></Typography>
+                        <Typography sx={{textTransform:'uppercase'}} variant={'body1'}><a href="#intro">Home</a></Typography>
+                        <Typography sx={{textTransform:'uppercase'}} variant={'body1'}><a href="#first">About</a></Typography>
+                        <Typography sx={{textTransform:'uppercase'}} variant={'body1'}><a href="#second">Info</a></Typography>
+                        <Typography sx={{textTransform:'uppercase'}} variant={'body1'}><a className="button" href="#intro">Contact</a></Typography>
                     </Box>
 
                     <Box sx={mainBoxStyles} className="main-box">
-                        <Box sx={{maxWidth: '300px'}} className="right-content">
+                        <Box sx={{maxWidth: '480px'}} className="right-content">
                             <Box className="slide-1">
                                 <header className="title">
-                                    <Typography variant={'h1'}>Penguins</Typography>
-                                    <Typography variant={'h4'}>A cool, minimalistic theme</Typography>
+                                    <Typography sx={{textTransform:'uppercase'}} variant={'h3'}>Penguin</Typography>
+                                    <Typography sx={{textTransform:'uppercase'}} variant={'h5'}>Amet dapibus nisi elit</Typography>
                                 </header>
                                 <Box className="content">
                                     <div className="image"></div>
                                     <div className="text">
                                         <Typography variant={'body1'}>Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris. Praesent diam risus, pretium et purus a, convallis faucibus purus.</Typography>
-                                        <Typography variant={'body1'}><a className="button" href="#intro">Learn More</a></Typography>
+                                        <Typography sx={{textTransform:'uppercase'}} variant={'body1'}><a className="button" href="#intro">Learn More</a></Typography>
                                     </div>
                                 </Box>
                             </Box>

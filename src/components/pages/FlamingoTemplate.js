@@ -27,17 +27,17 @@ const outerBoxStyles = {
 
 const innerBoxStyles = {
     maxWidth: '800px',
-    marginTop: '50px',
+    marginTop: {sx: '0px', sm: '50px'},
 };
 
 const innerNavStyles = {
     background: `linear-gradient(rgba(250, 110, 131, 0.8), rgba(255, 206, 153, 0.9)), url(${headerImg})`,
     backgroundSize: 'cover',
     backgroundPosition: 'top',
-    margin: '20px 20px 0px 20px',
+    margin: {xs: '0px', sm: '20px 20px 0px 20px'},
     padding: '180px 20px 20px 20px',
     maxWidth: '800px',
-    borderRadius: '20px 20px 0 0',
+    borderRadius: {xs:'0px', sm:'20px 20px 0 0'},
     color: '#FFF',
     textShadow: '0 0 5px rgba(0, 0, 0, 1)',
     boxShadow: '0px 10px 10px 0px rgba(0, 0, 0, 0.4)',
@@ -64,14 +64,14 @@ const innerNavStyles = {
 
 const mainStyles = {
     padding: '40px',
-    margin: '0px 20px 50px 20px',
+    margin: {xs:'0px', sm:'0px 20px 50px 20px'},
     backgroundColor: '#faf9f9',
     display: 'flex',
     maxWidth: '800px',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    borderRadius: '0 0 20px 20px',
+    borderRadius: {xs:'0px', sm:'0 0 20px 20px'},
     boxShadow: '0px 10px 10px 0px rgba(0, 0, 0, 0.4)'
 };
 
@@ -84,17 +84,22 @@ const introStyles = {
         color: '#555',
         fontSize: '26px',
         textAlign: 'center',
-        marginBottom:'35px'
+        marginBottom:'16px'
     },
+    '& p': {
+        color: '#555',
+    }
     //boxShadow: '0px 5px 5px 0px rgba(0, 0, 0, 0.2)'
 };
 
 const sectionStyles = {
     padding: '100px 0px 100px 0px',
-    '& p': {
+    '& p, h5': {
         marginRight: '30px',
+        marginBottom: '16px',
         color: '#555'
     },
+
     '& .inner-content, .section-3 .inner-content': {
         display: 'flex'
     },
@@ -133,8 +138,12 @@ const thirdSectionStyles = {
     '& .content-image': {
         borderRadius: '100px'
     },
-    '& p': {
+    '& h5': {
+        textAlign: 'center',
+    },
+    '& p, h5': {
         marginRight: '30px',
+        marginBottom: '16px',
         color: '#555'
     },
     '& .inner-content': {
@@ -170,7 +179,7 @@ const footerStyles = {
 const FlamingoTemplate = () => {
 
     useEffect(()=>{
-        document.title = "Gallery | Flamingo";
+        document.title = "Gallery | Flamingo Pink";
     },[]);
 
     return (
@@ -227,11 +236,10 @@ const FlamingoTemplate = () => {
                                     <Divider sx={{borderColor: 'rgba(255,255,255,0.5)', width: '90%', margin: '16px 0 16px 0'}}/>
                                 </div>
                                 <div className="content-text">
-                                    <Typography variant={'body1'}><strong>
+                                    <Typography sx={{marginBottom: '64px'}}variant={'body1'}><strong>
                                         Phasellus id malesuada elit. Praesent mollis sem augue. Mauris tempor ornare nisl, non tincidunt risus pretium nec. 
                                         Aenean auctor, arcu euismod fringilla porta, nisl felis dictum diam, at egestas augue magna ac odio.
                                     </strong></Typography>
-                                    <br />
                                     <Grid container spacing={3}>
                                         <Grid item sm={6}>
                                             <Typography variant={'body1'}>
