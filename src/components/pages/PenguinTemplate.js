@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import Header from '../Header';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 const bgImg = require('../../assets/penguins.jpg');
 
@@ -106,9 +106,11 @@ const mainBoxStyles = {
 
 const carouselButtonStyles = {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: {xs:'row', sm:'column'},
+    alignItems:'flex-end',
+    justifyContent:'center',
     '& a': {
-        backgroundColor: '#FFF',
+        backgroundColor: {xs: '#333', sm:'#FFF'},
         width: '10px',
         height: '10px',
         borderRadius: '5px',
@@ -140,26 +142,28 @@ const PenguinTemplate = () => {
                     </Box>
 
                     <Box sx={mainBoxStyles} className="main-box">
-                        <Box sx={{maxWidth: '480px'}} className="right-content">
-                            <Box className="slide-1">
-                                <header className="title">
-                                    <Typography sx={{textTransform:'uppercase'}} variant={'h3'}>Penguin</Typography>
-                                    <Typography sx={{textTransform:'uppercase'}} variant={'h5'}>Amet dapibus nisi elit</Typography>
-                                </header>
-                                <Box className="content">
-                                    <div className="image"></div>
-                                    <div className="text">
-                                        <Typography variant={'body1'}>Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris. Praesent diam risus, pretium et purus a, convallis faucibus purus.</Typography>
-                                        <Typography sx={{textTransform:'uppercase'}} variant={'body1'}><a className="button" href="#intro">Learn More</a></Typography>
-                                    </div>
+                        <Grid container spacing={0} sx={{width: '100%'}}>
+                            <Grid item xs={12} sm={11} className="right-content">
+                                <Box className="slide-1">
+                                    <header className="title">
+                                        <Typography sx={{textTransform:'uppercase'}} variant={'h3'}>Penguin</Typography>
+                                        <Typography sx={{textTransform:'uppercase'}} variant={'h5'}>Amet dapibus nisi elit</Typography>
+                                    </header>
+                                    <Box className="content">
+                                        <div className="image"></div>
+                                        <div className="text">
+                                            <Typography variant={'body1'}>Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris. Praesent diam risus, pretium et purus a, convallis faucibus purus.</Typography>
+                                            <Typography sx={{textTransform:'uppercase'}} variant={'body1'}><a className="button" href="#intro">Learn More</a></Typography>
+                                        </div>
+                                    </Box>
                                 </Box>
-                            </Box>
-                        </Box>
-                        <Box sx ={carouselButtonStyles} className="carousel-buttons">
-                            <a href="#intro1"><div className="carousel-btn"></div></a>
-                            <a href="#intro2"><div className="carousel-btn"></div></a>
-                            <a href="#intro3"><div className="carousel-btn"></div></a>
-                        </Box>
+                            </Grid>
+                            <Grid item xs={12} sm={1} sx={carouselButtonStyles} className="carousel-buttons">
+                                <a href="#intro1"><div className="carousel-btn"></div></a>
+                                <a href="#intro2"><div className="carousel-btn"></div></a>
+                                <a href="#intro3"><div className="carousel-btn"></div></a>
+                            </Grid>
+                        </Grid>
                     </Box>
                 </Box>
             </Box>
