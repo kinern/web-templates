@@ -1,22 +1,16 @@
-# Website Templates
+# React Webpage Templates
 
-### A collection of website templates
+### A collection of page templates made using React and Material UI
 
 #### Demo Page: *Gitpage site URL goes here*
 
----
+### Setup
 
-## Flamingo
-A bright pink single scroll column page with flamingoes and an 80s feel.  
-Color theme of pink, blue-green and white.  
+```
+# yarn install
+# yarn start
+```
 
-#### Screenshot
+### Screenshots
 
----
-
-## Penguins
-A minimalistic white and teal rectangular theme.
-
-#### Screenshot
-
----
+N/A
