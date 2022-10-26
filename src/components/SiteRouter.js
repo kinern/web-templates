@@ -4,6 +4,7 @@ import PenguinThemePage from '../components/pages/PenguinTemplate';
 import FlamingoThemePage from '../components/pages/FlamingoTemplate';
 import HorseThemePage from '../components/pages/WinterHorseTemplate';
 import WagashiTemplate from '../components/pages/WagashiTemplate';
+import BlogPostResults from '../components/pages/BlogPostResults';
 
 const SiteRouter = () => {
     return(
@@ -14,6 +15,7 @@ const SiteRouter = () => {
                 <Route path="/flamingo-theme" element={<FlamingoThemePage />} />
                 <Route path="/horse-theme" element={<HorseThemePage />} />
                 <Route path="/wagashi-theme" element={<WagashiTemplate />} />
+                <Route path="/blog-posts" element={<BlogPostResults />} />
             </Routes>
         </Router>
     );
