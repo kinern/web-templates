@@ -1,8 +1,25 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from '../Header';
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Divider, Grid, Link, Typography } from '@mui/material';
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const bgImg = require('../../assets/penguins.jpg');
+
+
+const carouselSettings = {
+    prevArrow: false,
+    nextArrow: false,
+    arrows: false,
+    dots: false,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+  };
 
 const backgroundStyle = {
     backgroundImage: 'linear-gradient(to bottom left,  transparent 70%, lightseagreen)',
@@ -101,6 +118,11 @@ const mainBoxStyles = {
             backgroundColor: 'lightseagreen',
             color: '#FFF'
         } 
+    },
+    '& .slide': {
+        maxWidth:'600px',
+        height: '400px',
+        padding:'20px',
     }
 }
 
@@ -124,9 +146,16 @@ const carouselButtonStyles = {
 
 const PenguinTemplate = () => {
 
+    const [slider, setSlider] = useState(null);
+
     useEffect(()=>{
         document.title = "Gallery | Penguins";
     },[]);
+
+    const goToSlide = (num) => {
+        if (slider == null) return;
+        slider.slickGoTo(num - 1);
+    }
 
     return (
         <Container sx={backgroundStyle} maxWidth={false} disableGutters>
@@ -144,24 +173,50 @@ const PenguinTemplate = () => {
                     <Box sx={mainBoxStyles} className="main-box">
                         <Grid container spacing={0} sx={{width: '100%'}}>
                             <Grid item xs={12} sm={11} className="right-content">
-                                <Box className="slide-1">
+                                <Slider ref={c => (setSlider(c))} {...carouselSettings}>
+                                <Box className="slide slide-1">
                                     <header className="title">
                                         <Typography sx={{textTransform:'uppercase'}} variant={'h3'}>Penguin</Typography>
                                         <Typography sx={{textTransform:'uppercase'}} variant={'h5'}>Amet dapibus nisi elit</Typography>
                                     </header>
                                     <Box className="content">
-                                        <div className="image"></div>
                                         <div className="text">
                                             <Typography variant={'body1'}>Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris. Praesent diam risus, pretium et purus a, convallis faucibus purus.</Typography>
                                             <Typography sx={{textTransform:'uppercase'}} variant={'body1'}><a className="button" href="#intro">Learn More</a></Typography>
                                         </div>
                                     </Box>
                                 </Box>
+                                <Box className="slide slide-2">
+                                    <header className="title">
+                                        <Typography sx={{textTransform:'uppercase'}} variant={'h4'}>About</Typography>
+                                    </header>
+                                    <Divider />
+                                    <Box className="content">
+                                        <div className="text">
+                                            <Typography variant={'body1'}>Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris. Praesent diam risus, pretium et purus a, convallis faucibus purus.</Typography>
+                                            <Typography variant={'body1'}>Aliquam rhoncus felis id vehicula interdum. Pellentesque a consectetur elit. Fusce accumsan dictum orci, a fringilla arcu sagittis nec. Donec ornare, lectus rhoncus hendrerit sagittis, dolor erat tincidunt nulla, fringilla porttitor orci ante molestie mauris.</Typography>
+                                        </div>
+                                    </Box>
+                                </Box>
+                                <Box className="slide slide-3">
+                                    <header className="title">
+                                        <Typography sx={{textTransform:'uppercase', marginBottom:'0px!important'}} variant={'h3'}>Information</Typography>
+                                        <Divider />
+                                        <Typography sx={{textTransform:'uppercase', marginTop:'12px'}} variant={'h6'}>Ipsum Lorem</Typography>
+                                    </header>
+                                    <Box className="content">
+                                        <div className="text">
+                                            <Typography variant={'body1'}>Quisque commodo, tortor id tristique maximus, nunc nulla dapibus diam, sit amet dapibus nisi elit id mauris. Praesent diam risus, pretium et purus a, convallis faucibus purus.</Typography>
+                                            <Typography variant={'body1'}>Aliquam rhoncus felis id vehicula interdum. Pellentesque a consectetur elit. Fusce accumsan dictum orci, a fringilla arcu sagittis nec. Donec ornare, lectus rhoncus hendrerit sagittis, dolor erat tincidunt nulla, fringilla porttitor orci ante molestie mauris.</Typography>
+                                        </div>
+                                    </Box>
+                                </Box>
+                                </Slider>
                             </Grid>
                             <Grid item xs={12} sm={1} sx={carouselButtonStyles} className="carousel-buttons">
-                                <a href="#intro1"><div className="carousel-btn"></div></a>
-                                <a href="#intro2"><div className="carousel-btn"></div></a>
-                                <a href="#intro3"><div className="carousel-btn"></div></a>
+                                <Link onClick={()=>goToSlide(1)}><div className="carousel-btn"></div></Link>
+                                <Link onClick={()=>goToSlide(2)}><div className="carousel-btn"></div></Link>
+                                <Link onClick={()=>goToSlide(3)}><div className="carousel-btn"></div></Link>
                             </Grid>
                         </Grid>
                     </Box>
