@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, BrowserRouter as Router} from 'react-router-dom';
+import { Route, Routes, HashRouter as Router} from 'react-router-dom';
 import PenguinThemePage from '../components/pages/PenguinTemplate';
 import FlamingoThemePage from '../components/pages/FlamingoTemplate';
 import HorseThemePage from '../components/pages/WinterHorseTemplate';
