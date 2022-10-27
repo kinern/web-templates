@@ -32,10 +32,11 @@ const Header = ({}) => {
     },[mobileOpen]);
 
     const links = [
-        {name: 'Flamingo', url: '/flamingo-theme'},
-        {name: 'Penguin', url: '/penguin-theme'},
-        {name: 'Wagashi', url: '/wagashi-theme'},
-        {name: 'Winter Horse', url: '/horse-theme'},
+        {name: 'Narrow Single Page', url: '/narrow-page'},
+        {name: 'Slides', url: '/slides'},
+        {name: 'Pastel Single Page', url: '/pastel-page'},
+        {name: '5 Panel', url: '/five-panel'},
+        {name: 'Blog Index', url:'/blog-index'},
     ];
 
     const Drawers = () => 

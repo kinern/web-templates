@@ -11,11 +11,11 @@ const SiteRouter = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<PenguinThemePage />} />
-                <Route path="/penguin-theme" element={<PenguinThemePage />} />
-                <Route path="/flamingo-theme" element={<FlamingoThemePage />} />
-                <Route path="/horse-theme" element={<HorseThemePage />} />
-                <Route path="/wagashi-theme" element={<WagashiTemplate />} />
-                <Route path="/blog-posts" element={<BlogPostResults />} />
+                <Route path="/slides" element={<PenguinThemePage />} />
+                <Route path="/narrow-page" element={<FlamingoThemePage />} />
+                <Route path="/five-panel" element={<HorseThemePage />} />
+                <Route path="/pastel-page" element={<WagashiTemplate />} />
+                <Route path="/blog-index" element={<BlogPostResults />} />
             </Routes>
         </Router>
     );
