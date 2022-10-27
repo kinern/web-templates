@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/web-templates/static/css/main.d12aed38.chunk.css",
+    "main.js": "/web-templates/static/js/main.2ad6268b.chunk.js",
+    "main.js.map": "/web-templates/static/js/main.2ad6268b.chunk.js.map",
+    "runtime-main.js": "/web-templates/static/js/runtime-main.84ad63ab.js",
+    "runtime-main.js.map": "/web-templates/static/js/runtime-main.84ad63ab.js.map",
+    "static/css/2.c7886eeb.chunk.css": "/web-templates/static/css/2.c7886eeb.chunk.css",
+    "static/js/2.0dcf98e1.chunk.js": "/web-templates/static/js/2.0dcf98e1.chunk.js",
+    "static/js/2.0dcf98e1.chunk.js.map": "/web-templates/static/js/2.0dcf98e1.chunk.js.map",
+    "index.html": "/web-templates/index.html",
+    "precache-manifest.c867a0e500a79e82c9a3bffe894a198d.js": "/web-templates/precache-manifest.c867a0e500a79e82c9a3bffe894a198d.js",
+    "service-worker.js": "/web-templates/service-worker.js",
+    "static/css/2.c7886eeb.chunk.css.map": "/web-templates/static/css/2.c7886eeb.chunk.css.map",
+    "static/css/main.d12aed38.chunk.css.map": "/web-templates/static/css/main.d12aed38.chunk.css.map",
+    "static/js/2.0dcf98e1.chunk.js.LICENSE.txt": "/web-templates/static/js/2.0dcf98e1.chunk.js.LICENSE.txt",
+    "static/media/anmitsu.jpg": "/web-templates/static/media/anmitsu.e472b4bd.jpg",
+    "static/media/flamingo-upsp.jpg": "/web-templates/static/media/flamingo-upsp.d25baef2.jpg",
+    "static/media/flamingo-upsp2.jpg": "/web-templates/static/media/flamingo-upsp2.bd5403c8.jpg",
+    "static/media/hills.jpg": "/web-templates/static/media/hills.876ab4b3.jpg",
+    "static/media/horse.jpg": "/web-templates/static/media/horse.48c3d811.jpg",
+    "static/media/leaves-upsp.jpg": "/web-templates/static/media/leaves-upsp.55fe3bab.jpg",
+    "static/media/macarons.jpg": "/web-templates/static/media/macarons.7328a157.jpg",
+    "static/media/ornaments.jpg": "/web-templates/static/media/ornaments.a5561e81.jpg",
+    "static/media/penguins.jpg": "/web-templates/static/media/penguins.cde82fdf.jpg",
+    "static/media/slick-theme.css": "/web-templates/static/media/slick.f97e3bbf.svg",
+    "static/media/street.jpg": "/web-templates/static/media/street.dcf6ab41.jpg",
+    "static/media/town.jpg": "/web-templates/static/media/town.be7389b3.jpg",
+    "static/media/wagashi-assortment.jpg": "/web-templates/static/media/wagashi-assortment.88a6d234.jpg",
+    "static/media/zefir.jpg": "/web-templates/static/media/zefir.b86b1c2f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84ad63ab.js",
+    "static/css/2.c7886eeb.chunk.css",
+    "static/js/2.0dcf98e1.chunk.js",
+    "static/css/main.d12aed38.chunk.css",
+    "static/js/main.2ad6268b.chunk.js"
+  ]
+}
