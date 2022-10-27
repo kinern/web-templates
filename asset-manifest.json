@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/web-templates/static/css/main.d12aed38.chunk.css",
-    "main.js": "/web-templates/static/js/main.2ad6268b.chunk.js",
-    "main.js.map": "/web-templates/static/js/main.2ad6268b.chunk.js.map",
+    "main.js": "/web-templates/static/js/main.7a2cc439.chunk.js",
+    "main.js.map": "/web-templates/static/js/main.7a2cc439.chunk.js.map",
     "runtime-main.js": "/web-templates/static/js/runtime-main.84ad63ab.js",
     "runtime-main.js.map": "/web-templates/static/js/runtime-main.84ad63ab.js.map",
     "static/css/2.c7886eeb.chunk.css": "/web-templates/static/css/2.c7886eeb.chunk.css",
-    "static/js/2.0dcf98e1.chunk.js": "/web-templates/static/js/2.0dcf98e1.chunk.js",
-    "static/js/2.0dcf98e1.chunk.js.map": "/web-templates/static/js/2.0dcf98e1.chunk.js.map",
+    "static/js/2.092b099c.chunk.js": "/web-templates/static/js/2.092b099c.chunk.js",
+    "static/js/2.092b099c.chunk.js.map": "/web-templates/static/js/2.092b099c.chunk.js.map",
     "index.html": "/web-templates/index.html",
-    "precache-manifest.c867a0e500a79e82c9a3bffe894a198d.js": "/web-templates/precache-manifest.c867a0e500a79e82c9a3bffe894a198d.js",
+    "precache-manifest.2528d460600553b284f48f3107648b85.js": "/web-templates/precache-manifest.2528d460600553b284f48f3107648b85.js",
     "service-worker.js": "/web-templates/service-worker.js",
     "static/css/2.c7886eeb.chunk.css.map": "/web-templates/static/css/2.c7886eeb.chunk.css.map",
     "static/css/main.d12aed38.chunk.css.map": "/web-templates/static/css/main.d12aed38.chunk.css.map",
-    "static/js/2.0dcf98e1.chunk.js.LICENSE.txt": "/web-templates/static/js/2.0dcf98e1.chunk.js.LICENSE.txt",
+    "static/js/2.092b099c.chunk.js.LICENSE.txt": "/web-templates/static/js/2.092b099c.chunk.js.LICENSE.txt",
     "static/media/anmitsu.jpg": "/web-templates/static/media/anmitsu.e472b4bd.jpg",
     "static/media/flamingo-upsp.jpg": "/web-templates/static/media/flamingo-upsp.d25baef2.jpg",
     "static/media/flamingo-upsp2.jpg": "/web-templates/static/media/flamingo-upsp2.bd5403c8.jpg",
@@ -32,8 +32,8 @@
   "entrypoints": [
     "static/js/runtime-main.84ad63ab.js",
     "static/css/2.c7886eeb.chunk.css",
-    "static/js/2.0dcf98e1.chunk.js",
+    "static/js/2.092b099c.chunk.js",
     "static/css/main.d12aed38.chunk.css",
-    "static/js/main.2ad6268b.chunk.js"
+    "static/js/main.7a2cc439.chunk.js"
   ]
 }
