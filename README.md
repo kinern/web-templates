@@ -2,7 +2,7 @@
 
 ### A collection of page templates made using React and Material UI
 
-#### Demo Page: *Gitpage site URL goes here*
+#### Demo Page: https://kinern.github.io/web-templates/
 
 ### Setup
 
