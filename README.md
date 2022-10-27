@@ -11,6 +11,12 @@
 # yarn start
 ```
 
+## Gitpages Branch Deployment
+
+```
+# yarn run deploy
+```
+
 ### Screenshots
 
 N/A
