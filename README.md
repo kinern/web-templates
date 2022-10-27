@@ -11,7 +11,7 @@
 # yarn start
 ```
 
-## Gitpages Branch Deployment
+### Gitpages Branch Deployment  
 
 ```
 # yarn run deploy
